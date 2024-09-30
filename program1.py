@@ -12,18 +12,17 @@ class Solution:
                 return
            
             visited.add((r, c))
-            # Visit all 4 possible directions
-            dfs(r + 1, c)  # down
-            dfs(r - 1, c)  # up
-            dfs(r, c + 1)  # right
-            dfs(r, c - 1)  # left
+            dfs(r + 1, c)  
+            dfs(r - 1, c)  
+            dfs(r, c + 1)  
+            dfs(r, c - 1)  
         
         island_count = 0
         
         for r in range(rows):
             for c in range(cols):
                 if grid[r][c] == 'L' and (r, c) not in visited:
-                    # Found an unvisited land cell, start DFS
+                    
                     dfs(r, c)
                     island_count += 1
         
